@@ -178,43 +178,8 @@ test_data = [
 0x112,
 0x112,
 0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
-0x112,
 0x112),
-         C=0xff,
+         C=10,
          D=List[byte, 256](1, 2),
          E=VarTestStruct(A=0xabcd, B=List[uint16, 1024](1, 2, 3), C=0xff),
          F=Vector[FixedTestStruct, 4](
@@ -304,7 +269,9 @@ test_data = [
 def test_encode_bytes(name: str, typ: Type[View], value: View, serialized: str, root: str, obj: ObjType):
     print(value)
     encoded = value.encode_bytes()
-    int_values = [x for x in encoded]            
+    int_values = [x for x in encoded]
+            
     print(int_values)
-
+     
+    #assert encoded.hex() == serialized
 
